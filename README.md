@@ -70,6 +70,19 @@ MacroEdge/
    PYTHONPATH=. python -m services.ingestion.job
    ```
 
+5. **Processing** (нормализация на surprise) и **Bias Engine** (scoring):
+   ```bash
+   # Само нормализация на surprise
+   PYTHONPATH=. python scripts/run_processing.py
+   # Bias: първи път с --seed, после без
+   PYTHONPATH=. python -m services.bias_engine.run --seed
+   PYTHONPATH=. python -m services.bias_engine.run
+   ```
+   Или **целият дневен pipeline** (ingestion → processing → bias):
+   ```bash
+   PYTHONPATH=. python scripts/run_daily.py --seed
+   ```
+
 ## Tech Stack (препоръка)
 
 - **Backend:** Python 3.11+, FastAPI
