@@ -49,23 +49,28 @@ MacroEdge/
 ## Стартиране (локално)
 
 1. **Стартирай DB и Redis:**
+
    ```bash
    docker compose up -d
    ```
 
 2. **Миграции** (първи път):
+
    ```bash
    # Опционално: копирай .env.example → .env и задай DATABASE_URL_SYNC / FRED_API_KEY
    PYTHONPATH=. python scripts/migrate.py
    ```
 
 3. **API сървър:**
+
    ```bash
    PYTHONPATH=. uvicorn services.api.main:app --reload
    ```
+
    Отвори http://127.0.0.1:8000/docs за OpenAPI.
 
 4. **Ingestion** (попълване с данни от FRED; изисква `FRED_API_KEY` в .env):
+
    ```bash
    PYTHONPATH=. python -m services.ingestion.job
    ```
@@ -82,6 +87,18 @@ MacroEdge/
    ```bash
    PYTHONPATH=. python scripts/run_daily.py --seed
    ```
+
+## Тестове
+
+- **Unit + API тестове** (без DB):
+  ```bash
+  pip install pytest pytest-asyncio
+  PYTHONPATH=. python -m pytest tests/ -v
+  ```
+- **Smoke test** (пълен flow при наличен DB и опционално FRED key):
+  ```bash
+  PYTHONPATH=. python scripts/smoke_test.py
+  ```
 
 ## Tech Stack (препоръка)
 
