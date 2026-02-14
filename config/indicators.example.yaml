@@ -15,66 +15,77 @@ indicators:
     category: inflation
     unit: percent
     source: FRED
+    series_id: CPILFESL
     direction: negative
   - code: PPI_YOY
     name: Producer Price Index (YoY)
     category: inflation
     unit: percent
     source: FRED
+    series_id: PPIACO
     direction: negative
   - code: GDP_QOQ
     name: GDP (QoQ SAAR)
     category: growth
     unit: percent
     source: FRED
+    series_id: GDPC1
     direction: positive
   - code: PMI_MANUFACTURING
     name: Manufacturing PMI
     category: activity
     unit: index
     source: FRED
+    series_id: ISM
     direction: positive
   - code: PMI_SERVICES
     name: Services PMI
     category: activity
     unit: index
     source: FRED
+    series_id: ISN
     direction: positive
   - code: UNEMPLOYMENT_RATE
     name: Unemployment Rate
     category: employment
     unit: percent
     source: FRED
+    series_id: UNRATE
     direction: negative
   - code: NONFARM_PAYROLLS
     name: Non-Farm Payrolls
     category: employment
     unit: thousands
     source: FRED
+    series_id: PAYEMS
     direction: positive
   - code: FED_FUNDS_RATE
     name: Fed Funds Rate (decision)
     category: rates
     unit: percent
     source: FRED
+    series_id: FEDFUNDS
     direction: negative
   - code: RETAIL_SALES_MOM
     name: Retail Sales (MoM)
     category: consumption
     unit: percent
     source: FRED
+    series_id: RSXFS
     direction: positive
   - code: CONSUMER_CONFIDENCE
     name: Consumer Confidence
     category: sentiment
     unit: index
     source: FRED
+    series_id: UMCSENT
     direction: positive
   - code: INDUSTRIAL_PRODUCTION
     name: Industrial Production (MoM)
     category: activity
     unit: percent
     source: FRED
+    series_id: INDPRO
     direction: positive
 
 # Bond yields (for yield curve) — usually not "surprise" but levels
@@ -82,12 +93,15 @@ auxiliary:
   - code: US_2Y
     name: US 2Y Treasury Yield
     source: FRED
+    series_id: DGS2
   - code: US_10Y
     name: US 10Y Treasury Yield
     source: FRED
+    series_id: DGS10
 
 # Volatility
 volatility:
   - code: VIX
     name: CBOE Volatility Index
     source: FRED
+    series_id: VIXCLS

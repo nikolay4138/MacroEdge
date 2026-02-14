@@ -1,0 +1,25 @@
+# MacroEdge — backend dependencies
+# Python 3.11+
+
+# API
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# DB
+asyncpg>=0.29.0
+sqlalchemy[asyncio]>=2.0.25
+
+# HTTP client (ingestion)
+httpx>=0.26.0
+
+# Config & data
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+pyyaml>=6.0.1
+
+# Utils
+python-dotenv>=1.0.0
+structlog>=24.1.0
+
+# Optional: Redis (cache) — uncomment when needed
+# redis>=5.0.0
