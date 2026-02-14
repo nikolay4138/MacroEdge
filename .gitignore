@@ -1,0 +1,37 @@
+# Environment and secrets
+.env
+.env.local
+*.pem
+config/*.yaml
+!config/*.example.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Frontend
+node_modules/
+dist/
+.next/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and local data
+logs/
+*.log
+data/
+*.db
+
+# Build and containers
+target/
+*.egg-info/
+.eggs/

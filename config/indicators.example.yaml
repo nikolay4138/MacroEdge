@@ -1,0 +1,93 @@
+# Macro indicators — configurable structure (extend from screenshots/specs)
+# Each indicator: code, name, category, unit, source key, direction for bias
+# direction: positive = higher actual vs forecast → more bullish; negative → more bearish
+
+indicators:
+  - code: CPI_YOY
+    name: Consumer Price Index (YoY)
+    category: inflation
+    unit: percent
+    source: FRED
+    series_id: CPIAUCSL # or specific YoY series
+    direction: negative # higher CPI → bearish
+  - code: CORE_CPI_YOY
+    name: Core CPI (YoY)
+    category: inflation
+    unit: percent
+    source: FRED
+    direction: negative
+  - code: PPI_YOY
+    name: Producer Price Index (YoY)
+    category: inflation
+    unit: percent
+    source: FRED
+    direction: negative
+  - code: GDP_QOQ
+    name: GDP (QoQ SAAR)
+    category: growth
+    unit: percent
+    source: FRED
+    direction: positive
+  - code: PMI_MANUFACTURING
+    name: Manufacturing PMI
+    category: activity
+    unit: index
+    source: FRED
+    direction: positive
+  - code: PMI_SERVICES
+    name: Services PMI
+    category: activity
+    unit: index
+    source: FRED
+    direction: positive
+  - code: UNEMPLOYMENT_RATE
+    name: Unemployment Rate
+    category: employment
+    unit: percent
+    source: FRED
+    direction: negative
+  - code: NONFARM_PAYROLLS
+    name: Non-Farm Payrolls
+    category: employment
+    unit: thousands
+    source: FRED
+    direction: positive
+  - code: FED_FUNDS_RATE
+    name: Fed Funds Rate (decision)
+    category: rates
+    unit: percent
+    source: FRED
+    direction: negative
+  - code: RETAIL_SALES_MOM
+    name: Retail Sales (MoM)
+    category: consumption
+    unit: percent
+    source: FRED
+    direction: positive
+  - code: CONSUMER_CONFIDENCE
+    name: Consumer Confidence
+    category: sentiment
+    unit: index
+    source: FRED
+    direction: positive
+  - code: INDUSTRIAL_PRODUCTION
+    name: Industrial Production (MoM)
+    category: activity
+    unit: percent
+    source: FRED
+    direction: positive
+
+# Bond yields (for yield curve) — usually not "surprise" but levels
+auxiliary:
+  - code: US_2Y
+    name: US 2Y Treasury Yield
+    source: FRED
+  - code: US_10Y
+    name: US 10Y Treasury Yield
+    source: FRED
+
+# Volatility
+volatility:
+  - code: VIX
+    name: CBOE Volatility Index
+    source: FRED

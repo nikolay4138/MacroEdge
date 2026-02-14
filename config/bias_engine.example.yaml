@@ -1,0 +1,40 @@
+# Bias Engine parameters (see BIAS_ALGORITHM.md)
+scoring:
+  # Scale for tanh: S = 100 * tanh(S_raw / lambda)
+  lambda:
+    SPX: 2.0
+    NDX: 2.0
+    DAX: 2.0
+    NKY: 2.0
+  # Optional linear scaling (if not using tanh): S = clip(kappa * S_raw, -100, 100)
+  # kappa: 25.0
+
+# Surprise normalization rolling window (days)
+surprise:
+  rolling_window_days: 252
+  cap_std_multiple: 3.0
+
+# Volatility filter (VIX)
+volatility:
+  vix_min: 10
+  vix_max: 40
+  # nu = 1 - min(1, (VIX - vix_min) / (vix_max - vix_min))
+
+# Yield curve adjustment (optional)
+yield_curve:
+  enabled: true
+  alpha_max_points: 8.0
+  spread_bps_reference: 50
+
+# Confidence
+confidence:
+  min_indicators_expected: 5
+  stale_release_days: 7
+
+# Risk flag thresholds
+risk_flag:
+  confidence_high: 70
+  confidence_low: 40
+  bias_moderate_abs: 50
+  vix_high: 35
+  vix_critical: 45

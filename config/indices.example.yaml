@@ -1,0 +1,31 @@
+# Supported indices and regions (for weighting and UI)
+indices:
+  - code: SPX
+    name: S&P 500
+    region: US
+    currency: USD
+    timezone: America/New_York
+  - code: NDX
+    name: NASDAQ 100
+    region: US
+    currency: USD
+    timezone: America/New_York
+  - code: DAX
+    name: DAX 40
+    region: EU
+    currency: EUR
+    timezone: Europe/Berlin
+  - code: NKY
+    name: Nikkei 225
+    region: JP
+    currency: JPY
+    timezone: Asia/Tokyo
+
+# Default regime weights multiplier per index (optional override in DB)
+# risk_on / risk_off / inflationary / recessionary / neutral
+default_regime_multipliers:
+  risk_on: 1.0
+  risk_off: 1.0
+  inflationary: 1.0
+  recessionary: 1.0
+  neutral: 1.0
